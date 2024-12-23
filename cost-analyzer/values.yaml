@@ -655,6 +655,13 @@ kubecostModel:
 
   # max number of concurrent Prometheus queries
   maxQueryConcurrency: 5
+
+  # max duration of a Prometheus query in minutes
+  maxPrometheusQueryDurationMinutes: 1440
+
+  # resolution of ETL queries in seconds
+  etlResolutionSeconds: 49
+
   resources:
     requests:
       cpu: "200m"
