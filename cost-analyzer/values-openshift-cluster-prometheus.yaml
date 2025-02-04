@@ -14,6 +14,7 @@ global:
     # Deploying to OpenShift (OCP) requires enabling this option.
     openshift:
       enabled: true  # Deploy Kubecost to OpenShift.
+      addOpenshiftMonitoringLabelToNamespace: true  # Add the openshift-monitoring label to the namespace to allow Prometheus to scrape the metrics.
       createMonitoringClusterRoleBinding: true  # Create a ClusterRoleBinding to grant the Kubecost serviceaccount access to query Prometheus.
       createMonitoringResourceReaderRoleBinding: true  # Create a Role and Role Binding to allow Prometheus to list and watch Kubecost resources.
       monitoringServiceAccountName: prometheus-k8s  # Name of the Prometheus serviceaccount to bind to the Resource Reader Role Binding.

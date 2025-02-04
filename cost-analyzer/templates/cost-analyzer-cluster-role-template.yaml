@@ -105,4 +105,12 @@ rules:
       - get
       - list
       - watch
+  {{- if and .Values.global.platforms.openshift.enabled .Values.global.platforms.openshift.addOpenshiftMonitoringLabelToNamespace }}
+  - apiGroups:
+      - ''
+    resources:
+      - namespaces
+    verbs:
+      - patch
+  {{- end }}
 {{- end }}
