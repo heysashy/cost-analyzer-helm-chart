@@ -77,6 +77,9 @@ spec:
         - name: aggregator-staging
           emptyDir:
             sizeLimit: {{ .Values.kubecostAggregator.stagingEmptyDirSizeLimit }}
+        - name: user-helm-values
+          configMap:
+            name: helm-values
         {{- $etlBackupBucketSecret := "" }}
         {{- if .Values.kubecostModel.federatedStorageConfigSecret }}
             {{- $etlBackupBucketSecret = .Values.kubecostModel.federatedStorageConfigSecret }}
